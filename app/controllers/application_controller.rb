@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
 end
 
-class MyVariable < Variable
+class MyVariable < Ym4r::MapstractionPlugin::Variable
 
   #Overrides the Variable implementation so that add_overlay works without javascript
   def to_s

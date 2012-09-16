@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 9) do
 
   create_table "baccos", :force => true do |t|
     t.integer  "projeto_mes_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.string   "grupo_de_fotos_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ordem",               :default => 0
   end
 
   create_table "locals", :force => true do |t|
