@@ -1,0 +1,2 @@
+module BaccoHelper
+end

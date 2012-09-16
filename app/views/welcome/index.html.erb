@@ -1,0 +1,56 @@
+
+
+<% content_for :conteudo_admin do %>
+
+  <div id="change_image" class="cortina" style="display:none;" >
+  &nbsp;
+  </div>
+
+  <div id="image_popup" class="janela popup" style="display:none;">
+    <%= link_to image_tag("/images/close.gif", :class=>"close", :width => '10px', :height => '10px'), toggle_mudanca_projetos %>
+      <% form_for @bacco, :url => { :action => "muda_projeto_mes"} do | f | %>
+      <p>
+        Selecione o projeto que deve ser mostrado na primeira p&aacute;gina:
+        <%= text_field_with_auto_complete :projeto, :nome, {}, :after_update_element => 'get_projeto_id' , :method => :get, :skip_style=>true %>
+        <%= hidden_field(:bacco, :projeto_mes_id) -%>
+        <%= f.submit "Mudar Projeto" , :onClick=> toggle_mudanca_projetos %>
+      </p>
+      <div id="projeto_preview">
+        <% if not @bacco.projeto_mes.destaque == NIL %>
+           <%= image_tag @bacco.projeto_mes.destaque.public_filename(:thumb), :id=>'foto_preview' %>
+        <% else %>
+           <%= image_tag '', :id => "foto_preview", :alt => @bacco.projeto_mes.nome+' não tem foto destaque' %>
+        <% end %>
+      </div>
+      <% end %>
+  </div>
+<% end %>
+
+
+<% content_for :conteudo do %>
+  <div id="div_foto" >
+    <% if not @foto.nil? %>
+    <%= link_to image_tag(@foto.public_filename, :id => "foto"), projeto_path(@projeto_mes.id) %>
+    <% else %>
+    <%= image_tag 'foto.jpg', :id => "foto" %>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+<% content_for :admin_links do %>
+  <li> <%= link_to "novo projeto", new_projeto_path %> </li>
+  <li><%= link_to "mudar projeto do mês",toggle_mudanca_projetos , :id=>"trocar_foto", :class=>"menu_item" %></li>
+<% end %>
+
+
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    make_visible('logo');
+    mostra = document.getElementById('mostra_logo');
+    mostra.onmouseout = function(){};
+  </script>
+<% end %>
+

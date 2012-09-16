@@ -1,0 +1,36 @@
+<div id="lista_de_fotos" class="flexcroll">
+  <div id="cortina_fotos" class="cortina sobre_lista_fotos" style="visibility:hidden;">&nbsp;</div>
+  <div id="form_fotos" class="janela sobre_lista_fotos" style="visibility:hidden;">
+    <% form_for(@foto, :url => formatted_fotos_path(:format => 'js'),
+          :html => { :multipart => true, :target => 'upload_frame', :id => 'foto_form'}) do |f| %>
+      <%= hidden_field :foto, :grupo_de_fotos_id %>
+      <%= hidden_field :foto, :grupo_de_fotos_type %>
+      <%= hidden_field :campo_destaque, campo_destaque %>
+      <p>
+        <label for="uploaded_data">Nova imagem:</label>
+        <%= f.file_field :uploaded_data%><br />
+        <input type="button" value="Enviar imagem" 
+            onClick="this.form.submit(); Effect.Appear('spinner');" />
+        <%= image_tag("spinner.gif", :id => 'spinner', :style => 'display:none;') %>
+        <input type="button" value="Cancelar"
+            onClick="make_invisible('cortina_fotos');make_invisible('form_fotos');" />
+      </p>
+    <% end %>
+    <iframe id='upload_frame' name='upload_frame' class='invisible'></iframe>
+  </div>
+  <div id="fotos" style="width:<%= (grupo.fotos.size * 105)+ 40 %>px;">
+    <%= image_tag 'adiciona.png', :onClick => 'make_visible("cortina_fotos");make_visible("form_fotos");',
+        :style=>'position:relative;top:-20px' %>
+    <% for foto in grupo.fotos do %>
+      <% if foto == grupo.destaque %>
+        <%= image_tag foto.public_filename(:thumb), :id => "foto_#{foto.id}", :class => 'highlighted',
+            :onClick => "javascript:change_foto_principal('#{campo_destaque}', #{foto.id}, '#{foto.public_filename}');" %>
+      <% else %>
+        <%= image_tag foto.public_filename(:thumb), :id => "foto_#{foto.id}", :class => 'normal',
+            :onClick => "javascript:change_foto_principal('#{campo_destaque}', #{foto.id}, '#{foto.public_filename}');" %>
+      <% end %>
+      <%= link_to_remote(image_tag('remove.png', :id=>'remove_'+foto.id.to_s, :class=>'imagem_remover'),
+          {:url => foto_path(foto), :method => :delete, :confirm => "Tem certeza?"}) %>
+    <% end %>
+  </div>
+</div>

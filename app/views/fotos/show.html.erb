@@ -1,0 +1,48 @@
+<p>
+  <b>Filename:</b>
+  <%=h @foto.filename %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @foto.content_type %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @foto.size %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h @foto.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @foto.height %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%=h @foto.parent_id %>
+</p>
+
+<p>
+  <b>Thumbnail:</b>
+  <%=h @foto.thumbnail %>
+</p>
+
+<p>
+  <b>Parent grupo_de_fotos:</b>
+  <%=h @foto.grupo_de_fotos_id %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @foto.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_foto_path(@foto) %> |
+<%= link_to 'Back', fotos_path %>

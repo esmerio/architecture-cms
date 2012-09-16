@@ -1,0 +1,27 @@
+<% render :partial =>"formulario_de_projetos" %>
+
+<% content_for :javascripts do%>
+  <script type="text/javascript">
+  window.onload = addCodeToFunction(window.onload, function() {
+      limpar = true;
+  });
+  window.onunload = addCodeToFunction(window.onunload, function() {
+      if(limpar) {
+        <%= remote_function(:url => limpa_fotos_path(@projeto.id)) %>
+      }
+  });
+  window.onbeforeunload = addCodeToFunction(window.onbeforeunload, function() {
+      if(limpar) {
+        return "Este projeto não foi salvo.";
+      }
+  });
+  function naolimpar() {
+      limpar = false;
+  }
+  </script>
+<% end %>
+
+<% content_for :admin_links do %>
+  <%= link_to "adicionar este projeto", "javascript:naolimpar();document.getElementById('projeto_form').submit();", :class=>"menu_item" %>
+  <%= link_to "cancelar modifica&ccedil;&otilde;es", limpa_fotos_path(@projeto.id), :class=>"menu_item" %>
+<% end %>

@@ -1,0 +1,43 @@
+<% content_for :cabecalho do %>
+  <%= stylesheet_link_tag 'projeto' %>
+  <%= javascript_include_tag 'flexcroll' %>
+<% end %>
+
+<% content_for :conteudo do %>
+  <div id="corpo_projeto">
+    <div class="background">
+      <% if not @projeto.destaque.nil? %>
+        <%= image_tag @projeto.destaque.public_filename, :id => 'foto_grande' %>
+      <% else %>
+        <img id="foto_grande">
+      <% end %>
+    </div>
+    <div id="texto_projeto" class="fundo_branco" >
+       <div class="flexcroll">
+         <%= RedCloth.new(@projeto.descricao,%w(no_span_caps)).to_html unless @projeto.descricao.nil? %>
+       </div>
+    </div>
+
+  </div>
+  <div id="lista_de_fotos" class="flexcroll">
+    <div id="fotos" style="width:<%= @projeto.fotos.size * 105 %>px;">
+      <% @projeto.fotos.each do |foto| %>
+        <%= image_tag foto.public_filename(:thumb) , :class=>"foto_pequena",
+            :onClick => "javascript:change_image('foto_grande','#{foto.public_filename}');" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :links do %>
+  <li> <%= link_to image_tag('009_TEXTO.png', :height => '22px')+"<span>exibir texto</span>", toggle_texto_projeto, :id => "link_texto_projeto", :style => "display:none;" %> <%= link_to image_tag('009_TEXTO_INV.png', :height => '22px')+"<span>ocultar texto</span>", toggle_texto_projeto, :id => "link_texto_projeto_inv", :style => "display:inline;" %></li>
+<% end %>
+
+<% content_for :info do %>
+  <li> <%= @projeto.nome %> </li>
+<% end %>
+  
+<% content_for :admin_links do %>
+  <%= link_to "editar", edit_projeto_path(@projeto) %>
+  <%= link_to "apagar", projeto_path(@projeto), :method => :delete, :confirm => "Tem certeza que deseja apagar este projeto '"+@projeto.nome+"'?" %>
+<% end %>

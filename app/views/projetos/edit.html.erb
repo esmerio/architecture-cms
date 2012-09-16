@@ -1,0 +1,9 @@
+
+<%= render :partial => "formulario_de_projetos" %>
+
+
+<% content_for :admin_links do %>
+  <%= link_to "salvar", "javascript:document.getElementById('projeto_form').submit();", :class=>"menu_item" %>
+  <%= link_to "cancelar modifica&ccedil;&otilde;es", projeto_path(@projeto), :class=>"menu_item" %>
+<% end %>
+

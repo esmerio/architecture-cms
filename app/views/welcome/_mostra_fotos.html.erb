@@ -1,0 +1,11 @@
+<table border=1 id="fotos">
+	<% fotos.each_with_index do |foto, i| %>
+		<% if i%5 == 0 %><tr><% end %>
+			<td>
+				<%= link_to_remote(image_tag(foto.public_filename(:thumb), :class => 'thumb', :id => 'foto_'+foto.id.to_s), :url => {:controller => 'fotos', :action => 'select', :id => foto.id}) %><br/>
+				<%= link_to_remote("Excluir", {:url => foto_path(foto), :method => :delete, :confirm => "Tem certeza?"}) %>
+			</td>
+		<% if i%5 == 4 %></tr><% end %>
+	<% end %>
+	<% if fotos.size%5 != 4 %></tr><% end %>
+</table>

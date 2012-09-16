@@ -1,0 +1,5 @@
+<ul class="auto_complete">
+<% for p in @projetos do -%>
+  <li class="projeto" id="<%= p.id %>" title="<% if not p.destaque.nil? then %><%=p.destaque.public_filename(:thumb)%><% end %>"><span class="informal"><%= p.id %> - </span><%=h p.nome -%></li>
+<% end -%>
+</ul>

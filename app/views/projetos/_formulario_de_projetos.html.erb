@@ -1,0 +1,102 @@
+<% content_for :cabecalho do %>
+  <%= stylesheet_link_tag 'projeto' %>
+  <%= javascript_include_tag 'flexcroll' %>
+  <%= GMap.header(:with_vml => false) %>
+  <%= @map.to_html %>
+<% end %>
+
+<% content_for :javascripts do%>
+  <script type="text/javascript">
+  window.onload = addCodeToFunction(window.onload,
+    function() { hookMouseWheel('mapa_div'); }
+  );
+  </script>
+<% end %>
+
+<% content_for :conteudo do %>
+  <% form_for @projeto, :html => {:id => 'projeto_form'} do |f| %>
+      <div class="background">
+        <% if not @projeto.destaque.nil? %>
+          <%= image_tag @projeto.destaque.public_filename, :id => 'foto_grande' %>
+        <% else %>
+          <img id="foto_grande">
+        <% end %>
+      </div>
+      <%= hidden_field_tag "fake_id", "#{@projeto.id}" %>
+      <%= hidden_field_tag "latitude" %>
+      <%= hidden_field_tag "longitude" %>
+      <%= hidden_field :projeto, :destaque_id %>
+      <div id="extra" class="fundo_branco">
+        <br/>
+        <label for="projeto_nome">T&iacute;tulo:</label>
+        <br/>
+        <div style="margin-left:12mm">
+           <%= f.text_field :nome, :size => 30 %>
+        </div>
+        <br/>
+        <br/>
+        <label for="projeto_data">Data:</label>
+        <br/>
+        <div style="margin-left:12mm" class="data_select">
+           <%= date_select "projeto", "data", {:id => 'data_projeto', :class => 'inputs',
+           :start_year => 1990, :use_month_numbers => true, :order => [:day, :month, :year]} %>
+        </div>
+        <br/>
+        <br/>
+        <label for="categoria_projeto">Categoria:</label>
+        <div style="margin-left:12mm">
+           <select name="projeto[categoria_id]" id="categoria_projeto" class="inputs">
+             <% @categorias.each do |cat| %>
+               <option value="<%= cat.id %>"
+                  <% if @projeto.categoria?(cat.id) %>
+                    selected="selected"
+                  <% end %>
+                ><%= cat.nome %></option>
+             <% end %>
+            </select>
+        </div>
+        <br/>
+        <label for="estagio_projeto">Est&aacute;gios:</label>
+        <div style="margin-left:12mm">
+          <% @estagios.each do |estagio| %>
+            </
+            <span class="inputs">
+            <input type="checkbox" name="projeto[estagio_ids][]"
+                value="<%= estagio.id %>"
+                id="estagio<%= estagio.id %>_projeto"
+                <% if @projeto.estagios.member?(estagio) %>
+                  checked="checked"
+                <% end %>
+            />
+            <%= estagio.nome %>
+            </span>
+            <br/>
+          <% end %>
+        </div>
+        <br/>
+        <label for="Endereço">Endere&ccedil;o: </label>
+        <div style="margin-left:12mm">
+           <%= text_field_tag :endereco_falso, mostra_local(@projeto), :size => 30, :onKeyDown => 'javascript:if(event.keyCode==13){copy_value("endereco", "endereco_falso");send("hidden_endereco");};' %>
+           <button onClick="javascript:copy_value('endereco', 'endereco_falso');send('hidden_endereco');" type='BUTTON'>
+              Procurar
+            </button>
+        </div>
+        <br/>
+      </div>
+      <div id="texto_projeto" class="fundo_branco">
+        <%= link_to 'Ajuda para formatação de texto', 'http://hobix.com/textile/', :popup => true  %>
+        <%= textile_editor 'projeto', 'descricao', :class => 'edit_descricao', :id => 'editor_textile'-%>
+        <%= textile_editor_initialize -%>
+      </div>
+      <div class="mapa">
+        <%= @map.div %>
+      </div>
+
+  <% end %>
+
+  <%= render :partial => "shared/edit_lista_fotos", :locals => { :grupo => @projeto, :campo_destaque => 'projeto_destaque_id' } %>
+
+  <% form_remote_tag :url => busca_endereco_path, :html => { :id => "hidden_endereco", :target => "upload_frame"}  do -%>
+    <%= hidden_field_tag "endereco" %>
+  <% end -%>
+<% end %>

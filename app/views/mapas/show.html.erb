@@ -1,0 +1,17 @@
+<% content_for :cabecalho do %>
+  <%= GMap.header(:with_vml => false) %>
+  <%= @map.to_html %>
+<% end %>
+
+<% content_for :conteudo do %>
+  <%= @map.div %>
+  <script type="text/javascript">
+  window.onload = addCodeToFunction(window.onload,function() {
+    hookMouseWheel('mapa_div');
+  });
+  </script>
+<% end %>
+
+<% content_for :admin_links do %>
+  <li> <%= link_to "novo projeto", new_projeto_path %> </li>
+<% end %>

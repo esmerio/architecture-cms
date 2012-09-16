@@ -1,0 +1,14 @@
+<div id="fotos" style="width:<%= (@projeto.fotos.size * 105)+ 40 %>px;">
+  <%= image_tag 'adiciona.png', :onClick => 'make_visible("cortina_fotos");make_visible("form_fotos");', :style=>'position:relative;top:-20px' %>
+  <% for foto in @projeto.fotos do %>
+    <% if foto == @projeto.destaque %>
+      <%= image_tag foto.public_filename(:thumb), :id => "foto_#{foto.id}", :class => 'highlighted',
+            :onClick => "javascript:change_foto_principal('projeto_destaque_id',#{foto.id}, '#{foto.public_filename}');" %>
+    <% else %>
+      <%= image_tag foto.public_filename(:thumb), :id => "foto_#{foto.id}", :class => 'normal',
+            :onClick => "javascript:change_foto_principal('projeto_destaque_id',#{foto.id}, '#{foto.public_filename}');" %>
+    <% end %>
+    <%= link_to_remote(image_tag('remove.png', :id=>'remove_'+foto.id.to_s, :class=>'imagem_remover'), {:url => foto_path(foto), :method => :delete, :confirm => "Tem certeza?"}) %>
+  <% end %>
+</div>
+

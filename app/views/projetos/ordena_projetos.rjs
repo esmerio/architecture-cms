@@ -1,0 +1,1 @@
+page.replace 'linhas_tabela_projetos', :partial => "tabela_de_projetos"

@@ -1,0 +1,16 @@
+<h1>New foto</h1>
+
+<%= error_messages_for :foto %>
+
+<% form_for(@foto, :html => { :multipart => true }) do |f| %>
+  <p>
+    <label for="uploaded_data">Envie uma foto:</label>
+    <%= f.file_field :uploaded_data %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', fotos_path %>

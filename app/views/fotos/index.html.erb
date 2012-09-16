@@ -1,0 +1,36 @@
+<h1>Listing fotos</h1>
+
+<table>
+  <tr>
+    <th>Filename</th>
+    <th>Content type</th>
+    <th>Size</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Parent</th>
+    <th>Thumbnail</th>
+    <th>Parent Projeto</th>
+    <th>Created at</th>
+  </tr>
+
+<% for foto in @fotos %>
+  <tr>
+    <td><%=h foto.filename %></td>
+    <td><%=h foto.content_type %></td>
+    <td><%=h foto.size %></td>
+    <td><%=h foto.width %></td>
+    <td><%=h foto.height %></td>
+    <td><%=h foto.parent_id %></td>
+    <td><%=h foto.thumbnail %></td>
+    <td><%=h foto.grupo_de_fotos_id %></td>
+    <td><%=h foto.created_at %></td>
+    <td><%= link_to 'Show', foto %></td>
+    <td><%= link_to 'Edit', edit_foto_path(foto) %></td>
+    <td><%= link_to 'Destroy', foto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New foto', new_foto_path %>

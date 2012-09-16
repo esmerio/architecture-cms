@@ -1,0 +1,44 @@
+<% content_for :cabecalho do %>
+  <%= stylesheet_link_tag 'tabela_projeto' %>
+  <%= javascript_include_tag 'flexcroll' %>
+
+  <%= javascript_include_tag 'filtro_estagio' %>
+  <script type="text/javascript">
+    <%= carrega_mapa_estagios(@projetos) %>
+  </script>
+<% end %>
+
+<% content_for :conteudo do %>
+  <div id="legenda_wrapper">
+    <div id="legenda_estagios">
+      <% for estagio in @estagios %>
+        <p class="legenda_linha"
+          onclick="<%= filtra_projetos(estagio) %>">
+          <span class="col1">
+            <span class="legenda estagio<%= estagio.ordem.to_s%>" id="estagio<%= estagio.id %>"> &nbsp;
+            </span>
+          </span>
+          <span class="col2"><%=h estagio.nome%></span>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="tabela_de_projetos">
+    <p class="cabecalho">
+      <span class="col1"> Projeto <%= link_to_remote image_tag('up.png', :class => 'flecha_up'), :url => ordena_projetos_path('nome', 'ASC') %><%= link_to_remote image_tag('down.png', :class => 'flecha_down'), :url => ordena_projetos_path('nome', 'DESC') %></span>
+      <span class="col2"> Ano <%= link_to_remote image_tag('up.png', :class => 'flecha_up'), :url => ordena_projetos_path('data', 'ASC') %><%= link_to_remote image_tag('down.png', :class => 'flecha_down'), :url => ordena_projetos_path('data', 'DESC') %></span>
+      <span class="col3"> Localiza&ccedil;&atilde;o <%= link_to_remote image_tag('up.png', :class => 'flecha_up'), :url => ordena_modelo_path('local', 'endereco', 'ASC') %><%= link_to_remote image_tag('down.png', :class => 'flecha_down'), :url => ordena_modelo_path('local', 'endereco', 'DESC') %></span>
+      <span class="col4"> Categoria <%= link_to_remote image_tag('up.png', :class => 'flecha_up'), :url => ordena_modelo_path('categoria', 'nome', 'ASC') %><%= link_to_remote image_tag('down.png', :class => 'flecha_down'), :url => ordena_modelo_path('categoria', 'nome', 'DESC') %></span>
+      <span class="col5junto"> Est&aacute;gios </span>
+    </p>
+
+    <div id="conteudo_tabela" class="flexcroll">
+      <%= render :partial => "tabela_de_projetos" %>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :admin_links do %>
+  <li> <%= link_to "novo projeto", new_projeto_path %> </li>
+<% end %>

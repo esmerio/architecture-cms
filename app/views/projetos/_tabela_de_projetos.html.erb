@@ -1,0 +1,24 @@
+<div id="linhas_tabela_projetos">
+  <% for projeto in @projetos %>
+    <p class="linhas" id="projeto<%= projeto.id %>"
+    	onclick="javascript: window.location='<%= projeto_path(projeto.id) %>';">
+      <span class="col1"><%=h projeto.nome %></span>
+      <span class="col2"><%=h projeto.data.to_s(:ano) %></span>
+      <span class="col3"><%= mostra_local(projeto) %></span>
+      <span class="col4"><%=h projeto.categoria.nome %></span>
+
+      <span class="col5"><%= tem_estagio(projeto, @estagios[0])%></span>
+      <span class="col5"><%= tem_estagio(projeto, @estagios[1])%></span>
+      <span class="col5"><%= tem_estagio(projeto, @estagios[2])%></span>
+      <span class="col5"><%= tem_estagio(projeto, @estagios[3])%></span>
+      <span class="col5"><%= tem_estagio(projeto, @estagios[4])%></span>
+
+    </p>
+  <% end %>
+
+  <div class="ult_linha"></div>
+  <script type="text/javascript">
+    filtra_projetos( <%= lista_js(@projetos, 'projeto') %> );
+  </script>
+</div>
+
