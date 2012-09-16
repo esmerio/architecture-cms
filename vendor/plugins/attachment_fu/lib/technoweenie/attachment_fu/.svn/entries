@@ -1,0 +1,34 @@
+8
+
+dir
+120
+svn://svn.linux.ime.usp.br/fabsn/bacco/vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu
+svn://svn.linux.ime.usp.br/fabsn/bacco
+
+
+
+2008-04-11T18:38:17.138795Z
+61
+marivb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4bd14214-1f03-4489-aa35-32b558f7365d
+
+processors
+dir
+
+backends
+dir
+

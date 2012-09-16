@@ -1,0 +1,121 @@
+8
+
+dir
+120
+svn://svn.linux.ime.usp.br/fabsn/bacco/vendor/plugins/attachment_fu
+svn://svn.linux.ime.usp.br/fabsn/bacco
+
+
+
+2008-04-11T18:38:17.138795Z
+61
+marivb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4bd14214-1f03-4489-aa35-32b558f7365d
+
+test
+dir
+
+Rakefile
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+68b46bbdc65a11adcda8d45f2fb01610
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+.gitignore
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+bec39d24d102bd2236700cec1d6b6096
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+init.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+14196c6d501d1361969f208f3718dbc3
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+lib
+dir
+
+CHANGELOG
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+ec17c82cf657dd296b920a224ac26697
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+amazon_s3.yml.tpl
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+be037d51d0ff671229cfda84cb28f672
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+install.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+afc122a879278a1bfe5df9634907d0a4
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+vendor
+dir
+
+README
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+6651e00ff7825f7aa8003a8f1d1050cd
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+

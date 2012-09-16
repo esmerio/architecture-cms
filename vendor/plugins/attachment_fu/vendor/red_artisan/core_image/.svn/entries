@@ -1,0 +1,43 @@
+8
+
+dir
+120
+svn://svn.linux.ime.usp.br/fabsn/bacco/vendor/plugins/attachment_fu/vendor/red_artisan/core_image
+svn://svn.linux.ime.usp.br/fabsn/bacco
+
+
+
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4bd14214-1f03-4489-aa35-32b558f7365d
+
+processor.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+656e8fcd739839a25ad282e106f60811
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+filters
+dir
+

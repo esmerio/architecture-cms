@@ -1,0 +1,212 @@
+/* Tabela de projetos */
+
+/* Legenda */
+#conteudo {
+   padding: 1em 0 0 0;
+}
+
+#legenda_wrapper {
+  float: left;
+  width: 100%;
+}
+
+#legenda_estagios {
+  float: right;
+  margin-right: 3em;
+  width: 15em;
+}
+
+#legenda_estagios p {
+  float: left;
+  width: 100%;
+  margin: 0;
+}
+
+#legenda_estagios span {
+  float: left;
+  height: 20px;
+  padding: 2px;
+  border: 0px;
+}
+
+#legenda_estagios span:hover {
+  cursor: pointer;
+  _cursor: hand;
+}
+#legenda_estagios span.col1 {
+  width: 20px;
+}
+
+#legenda_estagios span.col2 {
+  width: 80px;
+  vertical-align: middle;
+}
+
+#legenda_estagios span.legenda {
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+}
+
+/* Tabela */
+
+#tabela_de_projetos {
+  float: left;
+  width: 75em;
+  height: 90%;
+  border-top: .2em solid #e3e7e7;
+  margin-left: -100%;
+}
+
+.cabecalho {
+  font-weight: bold;
+}
+
+#tabela_de_projetos p {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin: 0;
+}
+
+.linhas:hover {
+  color: black;
+  cursor: pointer;
+  _cursor: hand;
+  background-color: #e3e7e7;
+}
+
+#tabela_de_projetos span {
+  float: left;
+  width: 74em;
+  /*height: 2em;*/
+  padding: .25em .5em;
+  border-top: .125em solid #e3e7e7;
+}
+
+#tabela_de_projetos p.cabecalho span {
+  border-top: none;
+}
+
+#tabela_de_projetos span.col1 {
+  width: 15em;
+}
+
+#tabela_de_projetos span.col2 {
+  width: 5em;
+}
+
+#tabela_de_projetos span.col3 {
+  width: 24em;
+}
+
+#tabela_de_projetos span.col4 {
+  width: 10em;
+}
+
+#tabela_de_projetos span.col5 {
+  width: 2em;
+  padding: .5em;
+}
+
+#tabela_de_projetos span.col5junto {
+  width: 10em; 
+}
+
+#tabela_de_projetos span.quadradinho {
+  border-top: none;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+  margin: 2px;
+}
+
+span.estagio_none {
+  background-color: transparent;
+}
+
+span.estagio1 {
+  background-color: black;
+}
+
+span.estagio2 {
+  background-color: #999;
+}
+
+span.estagio3 {
+  background-color: red;
+}
+
+span.estagio4 {
+  background-color: green;
+}
+
+span.estagio5 {
+  background-color: blue;
+}
+
+#tabela_de_projetos .ult_linha {
+  clear: both;
+  width: 100%;
+  border-top: .2em solid #e3e7e7;
+}
+
+.flecha_up {
+  border: 0px;
+}
+
+.flecha_down {
+  border: 0px;
+}
+
+/* Scrollbar */
+
+#conteudo_tabela {
+  overflow: auto;
+  height: 90%;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+#tabela_de_projetos .scrollgeneric {
+  font-size:1px;
+  left:0pt;
+  line-height:1px;
+  position:absolute;
+  top:0pt;
+}
+
+#tabela_de_projetos .vscrollerbasebeg {
+  background: transparent url(../images/s_up.png) no-repeat scroll;
+  width:16px;
+  height:10px !important;
+}
+
+#tabela_de_projetos .vscrollerbase {
+  width:16px;
+}
+
+#tabela_de_projetos .vscrollerbaseend {
+  background: transparent url(../images/s_down.png) no-repeat scroll;
+  width:16px;
+  height:10px;
+}
+
+#tabela_de_projetos .vscrollerbar {
+  background-color:yellow;
+  width:16px;
+  height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#tabela_de_projetos .scrollerjogbox {
+  bottom:0px;
+  height:10px;
+  left:auto;
+  right:0px;
+  top:auto;
+  width:10px;
+}
+

@@ -1,0 +1,385 @@
+/* Layout */
+label {
+  margin-left: 2mm;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#conteudo {
+  padding: 15px 0px 0px 0px;
+  height: 78%;
+  max-width: 100%;
+  text-align: left;
+}
+
+#foto_grande {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+#projeto_form {
+  top: 0%;
+  padding: 0;
+  height: 80%;
+  width: 100%;
+  position: relative;
+}
+
+#corpo_projeto {
+  top: 0%;
+  height: 80%;
+  width: 100%;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.background {
+  z-index:0;
+}
+
+#titulo {
+  padding: 10px 0px 0px 10px;
+  font-size: 20pt;
+  float: left;
+  position: relative;
+}
+
+#extra {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 25%;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#mapa_div {
+  position: absolute;
+  padding: 0px;
+  left:0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.mapa {
+  position: relative;
+  padding: 0px;
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+#close{
+  position: absolute;
+  float: right;
+  left: 95%;
+  z-index: 20;
+}
+
+.front {
+  z-index: 1;
+}
+
+/* CSS para caixa de texto */
+#texto_projeto * {
+  margin-right: 6pt;
+}
+
+#texto_projeto h1 {
+  font-size: 1.9em;
+  line-height: 160%;
+  margin-bottom: 12pt;
+}
+
+#texto_projeto h2 {
+  font-size: 1.7em;
+  line-height: 130%;
+  margin-bottom: 8pt;
+}
+
+#texto_projeto h3 {
+  font-size: 1.5em;
+  line-height: 130%;
+  margin-bottom: 8pt;
+}
+
+#texto_projeto h4 {
+  font-size: 1.3em;
+  line-height: 130%;
+  margin-bottom: 8pt;
+  font-style: italic;
+}
+
+#texto_projeto p {
+  margin-bottom: 5pt;
+}
+
+#texto_projeto li {
+  margin-bottom: 2pt;
+}
+
+#texto_projeto ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-left: 15pt;
+  margin-bottom: 5pt;
+}
+
+#texto_projeto ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 15pt;
+  margin-bottom: 5pt;
+}
+
+#texto_projeto blockquote {
+  font-style: italic;
+  margin-left: 10pt;
+  margin-top: 5pt;
+  margin-bottom: 7pt;
+}
+
+/* Scrollbars da descricao do projeto */
+#texto_projeto {
+  position: relative;
+  float: right;
+  right: 30px;
+  height: 100%;
+  width: 25%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flexcroll {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.fundo_branco {
+
+  background: transparent url(/images/fundotransparente.png) repeat scroll 0% 0%;
+}
+
+
+.scrollgeneric {
+  font-size: 1px;
+  left: 0pt;
+  line-height: 1px;
+  position: absolute;
+  top: 0pt;
+}
+
+.vscrollerbasebeg {
+  background: transparent url(../images/s_up.png) no-repeat scroll;
+  width: 16px;
+  height: 10px !important;
+}
+
+.vscrollerbase {
+  width:16px;
+}
+
+.vscrollerbaseend {
+  background: transparent url(../images/s_down.png) no-repeat scroll;
+  width: 16px;
+  height: 10px;
+}
+
+.vscrollerbar {
+  background-color: yellow;
+  width: 16px;
+  height: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hscrollerbase {
+  background-color: white;
+  height: 10px;
+/*  background: none;*/
+  width: 100%;
+}
+
+.hscrollerbasebeg {
+  background: url(/images/s_left.png) 0px 0px no-repeat;
+  height: 10px;
+  width: 5px !important;
+  z-index: 10;
+}
+
+.hscrollerbaseend {
+  height: 10px;
+  width: 5px;
+  background: url(/images/s_right.png) 0px 0px no-repeat;
+  z-index: 10;
+}
+
+.hscrollerbar {
+  background-color: transparent;
+  height: 10px;
+}
+
+.scrollerjogbox {
+  background-color: gray;
+  bottom: 0px;
+  height: 10px;
+  left: auto;
+  right: 0px;
+  top: auto;
+  width: 10px;
+}
+
+/* Lista de fotos e scrollbars */
+
+.foto_pequena {
+  margin-left: 1em;
+}
+
+.foto_pequena:hover {
+  cursor: pointer;
+}
+#fotos {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 82px;
+  width: 100%;
+}
+
+#lista_de_fotos {
+  position: absolute;
+  bottom: 15%;
+  vertical-align: middle;
+  /*text-align: center;*/
+  /*padding-top: 1em;*/
+  /*padding-bottom: 1em;*/
+  width: 99%;
+  height: 90px;
+}
+
+#lista_de_fotos .scrollgeneric {
+  font-size: 1px;
+  left: 0pt;
+  line-height: 1px;
+  position: absolute;
+  top:0pt;
+}
+
+#lista_de_fotos .vscrollerbasebeg {
+  background-color: transparent;
+  width: 10px;
+  display: none;
+  height: 10px !important;
+}
+
+#lista_de_fotos .vscrollerbase {
+  background-color: transparent;
+  width: 10px;
+  display: none;
+}
+
+#lista_de_fotos .vscrollerbaseend {
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
+  display: none;
+}
+
+#lista_de_fotos .vscrollerbar {
+  display: none;
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+#lista_de_fotos .hscrollerbase {
+  background-color: white;
+  height: 10px;
+/*  background: none;*/
+}
+
+#lista_de_fotos .hscrollerbasebeg{
+  left: 0px;
+  top: -80px;
+  background: url(/images/white_left.png) 0px 0px no-repeat;
+  height: 80px;
+  width: 15px !important;
+  z-index: 15;
+}
+
+#lista_de_fotos .hscrollerbaseend {
+  top: -80px;
+  height: 80px;
+  width: 15px;
+  background: url(/images/white_right.png) 0px 0px no-repeat;
+  z-index: 15;
+}
+
+#lista_de_fotos .hscrollerbar {
+  background-color: transparent;
+  height: 10px;
+}
+
+#lista_de_fotos .scrollerjogbox {
+  background-color: none;
+  display: none;
+  bottom: 0px;
+  height: 10px;
+  left: auto;
+  right: 0px;
+  top: auto;
+  width: 10px;
+}
+
+/* Edição de projetos */
+
+#edit_texto_projeto {
+  background: transparent url(/images/fundotransparente.png) repeat scroll 0% 0%;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+}
+
+.edit_descricao {
+  width: 100%;
+  height: 80%;
+}
+
+.textile-toolbar {
+  width: 100%;
+}
+
+#categoria_projeto {
+  width: 120px;
+}
+
+.sobre_lista_fotos {
+  top: 0px;
+}
+
+.imagem_remover {
+  position: relative;
+  left: -20px;
+  top: -65px;
+}
+
+.extra br {
+  clear: left;
+}
+
+.inputs {
+  margin-bottom: 10px;
+}
+
+.data_select select {
+  width: 50px;
+}
+
+.highlighted {
+  border: 1px dashed black;
+}
+

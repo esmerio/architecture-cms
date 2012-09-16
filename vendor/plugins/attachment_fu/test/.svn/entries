@@ -1,0 +1,133 @@
+8
+
+dir
+120
+svn://svn.linux.ime.usp.br/fabsn/bacco/vendor/plugins/attachment_fu/test
+svn://svn.linux.ime.usp.br/fabsn/bacco
+
+
+
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4bd14214-1f03-4489-aa35-32b558f7365d
+
+test_helper.rb
+file
+
+
+
+
+2008-06-30T10:28:21.000000Z
+9d272003c294faa402ab4dd124ceb2ca
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+processors
+dir
+
+basic_test.rb
+file
+
+
+
+
+2008-06-30T10:28:21.000000Z
+bb6f889236ea7f6df8d260be801d1cc9
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+schema.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+c1a39fd3f06c9b2fd7afe16c821b0f28
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+database.yml
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+de61d5c12656d3628ed4444610729e6b
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+base_attachment_tests.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+9fb616a530242c1ab740f38b83e23b7b
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+fixtures
+dir
+
+backends
+dir
+
+validation_test.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+709cfdd36b9200460253c2583540d93c
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+extra_attachment_test.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+067e320475b9f11a335ab3182facf297
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+
+geometry_test.rb
+file
+
+
+
+
+2008-06-30T10:28:22.000000Z
+80ddee3f32a0f9523ada06ebac1dde2b
+2008-03-28T16:06:15.900209Z
+1
+fabsn
+

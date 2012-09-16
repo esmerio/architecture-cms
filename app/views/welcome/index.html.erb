@@ -8,18 +8,18 @@
 
   <div id="image_popup" class="janela popup" style="display:none;">
     <%= link_to image_tag("/images/close.gif", :class=>"close", :width => '10px', :height => '10px'), toggle_mudanca_projetos %>
-      <% form_for @bacco, :url => { :action => "muda_projeto_mes"} do | f | %>
+      <% form_for @office, :url => { :action => "muda_projeto_mes"} do | f | %>
       <p>
         Selecione o projeto que deve ser mostrado na primeira p&aacute;gina:
         <%= text_field_with_auto_complete :projeto, :nome, {}, :after_update_element => 'get_projeto_id' , :method => :get, :skip_style=>true %>
-        <%= hidden_field(:bacco, :projeto_mes_id) -%>
+        <%= hidden_field(:office, :projeto_mes_id) -%>
         <%= f.submit "Mudar Projeto" , :onClick=> toggle_mudanca_projetos %>
       </p>
       <div id="projeto_preview">
-        <% if not @bacco.projeto_mes.destaque == NIL %>
-           <%= image_tag @bacco.projeto_mes.destaque.public_filename(:thumb), :id=>'foto_preview' %>
+        <% if not @office.projeto_mes.destaque == NIL %>
+           <%= image_tag @office.projeto_mes.destaque.public_filename(:thumb), :id=>'foto_preview' %>
         <% else %>
-           <%= image_tag '', :id => "foto_preview", :alt => @bacco.projeto_mes.nome+' não tem foto destaque' %>
+           <%= image_tag '', :id => "foto_preview", :alt => @office.projeto_mes.nome+' não tem foto destaque' %>
         <% end %>
       </div>
       <% end %>

@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @bacco = Bacco.find(:first)
-    @projeto_mes = @bacco.projeto_mes
+    @office = Office.find(:first)
+    @projeto_mes = @office.projeto_mes
     @foto = @projeto_mes.destaque
     @projetos = Projeto.find(:all)
     respond_to do |format|
@@ -10,8 +10,8 @@ class WelcomeController < ApplicationController
   end
 
   def muda_projeto_mes
-    @bacco = Bacco.find(:first)
-    @bacco.update_attributes(params[:bacco])
+    @office = Office.find(:first)
+    @office.update_attributes(params[:office])
     respond_to do |format|
       format.html { redirect_to root_path}
     end

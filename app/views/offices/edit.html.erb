@@ -1,0 +1,32 @@
+<% content_for :cabecalho do %>
+  <%= stylesheet_link_tag 'projeto' %>
+  <%= javascript_include_tag 'flexcroll' %>
+<% end %>
+
+<% content_for :conteudo do %>
+
+  <% form_for :office, :url => {:action => "update"}, :html => {:id => 'projeto_form'} do |f| %>
+      <div class="background">
+        <% if not @office.destaque.nil? %>
+          <%= image_tag @office.destaque.public_filename, :id => 'foto_grande' %>
+        <% else %>
+          <img id="foto_grande">
+        <% end %>
+      </div>
+      <%= hidden_field(:office, :destaque_id) %>
+      <div id="texto_projeto" class="fundo_branco">
+        <%= link_to 'Ajuda para formatação de texto', 'http://hobix.com/textile/', :popup => true  %>
+        <%= #textile_editor 'office', 'descricao', :class => 'edit_descricao', :id => 'editor_textile'-%>
+        <%= #textile_editor_initialize -%>
+      </div>
+  <% end %>
+
+  <%= render :partial => "shared/edit_lista_fotos", :locals => { :grupo => @office, :campo_destaque => 'bacco_destaque_id' } %>
+
+<% end %>
+
+<% content_for :admin_links do %>
+  <%= link_to "salvar", "javascript:document.getElementById('projeto_form').submit();", :class=>"menu_item" %>
+  <%= link_to "cancelar modifica&ccedil;&otilde;es", equipe_path, :class=>"menu_item" %>
+<% end %>
+
